@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		6A4306682928530B00D00E97 /* MoneyControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306672928530B00D00E97 /* MoneyControlApp.swift */; };
-		6A43066A2928530B00D00E97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306692928530B00D00E97 /* ContentView.swift */; };
+		6A43066A2928530B00D00E97 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306692928530B00D00E97 /* MainView.swift */; };
 		6A43066C2928530C00D00E97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066B2928530C00D00E97 /* Assets.xcassets */; };
 		6A43066F2928530C00D00E97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066E2928530C00D00E97 /* Preview Assets.xcassets */; };
 		6A430677292853AA00D00E97 /* ControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430676292853AA00D00E97 /* ControlModel.swift */; };
+		6A43067B292856E900D00E97 /* ControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067A292856E900D00E97 /* ControlViewModel.swift */; };
+		6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067C2928589B00D00E97 /* TopBarView.swift */; };
+		6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43068029285C5C00D00E97 /* InfoWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A4306642928530B00D00E97 /* MoneyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A4306672928530B00D00E97 /* MoneyControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyControlApp.swift; sourceTree = "<group>"; };
-		6A4306692928530B00D00E97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6A4306692928530B00D00E97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6A43066B2928530C00D00E97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A43066E2928530C00D00E97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A430676292853AA00D00E97 /* ControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlModel.swift; sourceTree = "<group>"; };
+		6A43067A292856E900D00E97 /* ControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewModel.swift; sourceTree = "<group>"; };
+		6A43067C2928589B00D00E97 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		6A43068029285C5C00D00E97 /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +59,10 @@
 		6A4306662928530B00D00E97 /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
-				6A4306752928539000D00E97 /* Model */,
 				6A4306672928530B00D00E97 /* MoneyControlApp.swift */,
-				6A4306692928530B00D00E97 /* ContentView.swift */,
+				6A4306752928539000D00E97 /* Model */,
+				6A4306782928567E00D00E97 /* ViewModel */,
+				6A4306792928568800D00E97 /* View */,
 				6A43066B2928530C00D00E97 /* Assets.xcassets */,
 				6A43066D2928530C00D00E97 /* Preview Content */,
 			);
@@ -76,6 +83,32 @@
 				6A430676292853AA00D00E97 /* ControlModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6A4306782928567E00D00E97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6A43067A292856E900D00E97 /* ControlViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6A4306792928568800D00E97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A43067E29285B1300D00E97 /* Elements UI */,
+				6A4306692928530B00D00E97 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A43067E29285B1300D00E97 /* Elements UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A43067C2928589B00D00E97 /* TopBarView.swift */,
+				6A43068029285C5C00D00E97 /* InfoWidget.swift */,
+			);
+			path = "Elements UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */,
 				6A430677292853AA00D00E97 /* ControlModel.swift in Sources */,
-				6A43066A2928530B00D00E97 /* ContentView.swift in Sources */,
+				6A43066A2928530B00D00E97 /* MainView.swift in Sources */,
+				6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */,
+				6A43067B292856E900D00E97 /* ControlViewModel.swift in Sources */,
 				6A4306682928530B00D00E97 /* MoneyControlApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
