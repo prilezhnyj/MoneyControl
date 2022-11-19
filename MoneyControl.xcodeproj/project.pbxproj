@@ -11,6 +11,7 @@
 		6A43066A2928530B00D00E97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306692928530B00D00E97 /* ContentView.swift */; };
 		6A43066C2928530C00D00E97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066B2928530C00D00E97 /* Assets.xcassets */; };
 		6A43066F2928530C00D00E97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066E2928530C00D00E97 /* Preview Assets.xcassets */; };
+		6A430677292853AA00D00E97 /* ControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430676292853AA00D00E97 /* ControlModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6A4306692928530B00D00E97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6A43066B2928530C00D00E97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A43066E2928530C00D00E97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6A430676292853AA00D00E97 /* ControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		6A4306662928530B00D00E97 /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
+				6A4306752928539000D00E97 /* Model */,
 				6A4306672928530B00D00E97 /* MoneyControlApp.swift */,
 				6A4306692928530B00D00E97 /* ContentView.swift */,
 				6A43066B2928530C00D00E97 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				6A43066E2928530C00D00E97 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6A4306752928539000D00E97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A430676292853AA00D00E97 /* ControlModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A430677292853AA00D00E97 /* ControlModel.swift in Sources */,
 				6A43066A2928530B00D00E97 /* ContentView.swift in Sources */,
 				6A4306682928530B00D00E97 /* MoneyControlApp.swift in Sources */,
 			);
