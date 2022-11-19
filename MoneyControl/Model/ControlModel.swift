@@ -11,7 +11,10 @@ import Foundation
 struct ControlModel: Identifiable {
     var id = UUID().uuidString
     var expenseCategory: ExpenseCategory?
+    var expenseDescription: String?
+    var expenseCheckPhoto: String?
     var incomeCategory: IncomeCategory?
+    var incomeDescription: String?
     var accoutn: Account?
     var type: TypeOperation
     var amount: Double
@@ -20,7 +23,7 @@ struct ControlModel: Identifiable {
 
 
 // MARK: - Expense Category
-enum ExpenseCategory: String {
+enum ExpenseCategory: CaseIterable {
     case products
     case home
     case sweets
@@ -130,7 +133,7 @@ extension IncomeCategory {
 
 
 // MARK: - Account type
-enum Account {
+enum Account: CaseIterable {
     case main
     case personal
 }

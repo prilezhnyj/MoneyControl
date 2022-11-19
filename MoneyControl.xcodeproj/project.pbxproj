@@ -15,6 +15,7 @@
 		6A43067B292856E900D00E97 /* ControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067A292856E900D00E97 /* ControlViewModel.swift */; };
 		6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067C2928589B00D00E97 /* TopBarView.swift */; };
 		6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43068029285C5C00D00E97 /* InfoWidget.swift */; };
+		6A430683292874FB00D00E97 /* NewOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430682292874FB00D00E97 /* NewOperationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6A43067A292856E900D00E97 /* ControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewModel.swift; sourceTree = "<group>"; };
 		6A43067C2928589B00D00E97 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		6A43068029285C5C00D00E97 /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
+		6A430682292874FB00D00E97 /* NewOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOperationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				6A43067E29285B1300D00E97 /* Elements UI */,
 				6A4306692928530B00D00E97 /* MainView.swift */,
+				6A430682292874FB00D00E97 /* NewOperationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A430683292874FB00D00E97 /* NewOperationView.swift in Sources */,
 				6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */,
 				6A430677292853AA00D00E97 /* ControlModel.swift in Sources */,
 				6A43066A2928530B00D00E97 /* MainView.swift in Sources */,

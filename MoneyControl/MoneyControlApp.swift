@@ -11,7 +11,7 @@ import SwiftUI
 struct MoneyControlApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            NewOperationView()
         }
     }
 }
