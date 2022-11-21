@@ -11,8 +11,8 @@
 		6A43066A2928530B00D00E97 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306692928530B00D00E97 /* MainView.swift */; };
 		6A43066C2928530C00D00E97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066B2928530C00D00E97 /* Assets.xcassets */; };
 		6A43066F2928530C00D00E97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066E2928530C00D00E97 /* Preview Assets.xcassets */; };
-		6A430677292853AA00D00E97 /* ControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430676292853AA00D00E97 /* ControlModel.swift */; };
-		6A43067B292856E900D00E97 /* ControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067A292856E900D00E97 /* ControlViewModel.swift */; };
+		6A430677292853AA00D00E97 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430676292853AA00D00E97 /* ExpenseModel.swift */; };
+		6A43067B292856E900D00E97 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067A292856E900D00E97 /* ExpenseViewModel.swift */; };
 		6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43067C2928589B00D00E97 /* TopBarView.swift */; };
 		6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43068029285C5C00D00E97 /* InfoWidget.swift */; };
 		6A430683292874FB00D00E97 /* NewOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A430682292874FB00D00E97 /* NewOperationView.swift */; };
@@ -24,8 +24,8 @@
 		6A4306692928530B00D00E97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6A43066B2928530C00D00E97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A43066E2928530C00D00E97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6A430676292853AA00D00E97 /* ControlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlModel.swift; sourceTree = "<group>"; };
-		6A43067A292856E900D00E97 /* ControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewModel.swift; sourceTree = "<group>"; };
+		6A430676292853AA00D00E97 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
+		6A43067A292856E900D00E97 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 		6A43067C2928589B00D00E97 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		6A43068029285C5C00D00E97 /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
 		6A430682292874FB00D00E97 /* NewOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOperationView.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		6A4306752928539000D00E97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6A430676292853AA00D00E97 /* ControlModel.swift */,
+				6A430676292853AA00D00E97 /* ExpenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 		6A4306782928567E00D00E97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6A43067A292856E900D00E97 /* ControlViewModel.swift */,
+				6A43067A292856E900D00E97 /* ExpenseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,10 +186,10 @@
 			files = (
 				6A430683292874FB00D00E97 /* NewOperationView.swift in Sources */,
 				6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */,
-				6A430677292853AA00D00E97 /* ControlModel.swift in Sources */,
+				6A430677292853AA00D00E97 /* ExpenseModel.swift in Sources */,
 				6A43066A2928530B00D00E97 /* MainView.swift in Sources */,
 				6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */,
-				6A43067B292856E900D00E97 /* ControlViewModel.swift in Sources */,
+				6A43067B292856E900D00E97 /* ExpenseViewModel.swift in Sources */,
 				6A4306682928530B00D00E97 /* MoneyControlApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

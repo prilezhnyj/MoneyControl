@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ControlViewModel: ObservableObject {
+class ExpenseViewModel: ObservableObject {
     
-    @Published var mockData = [ControlModel]()
+    @Published var mockData = [ExpenseModel]()
     @Published var currentDay = Date()
     @Published var currentWeek = [Date]()
     @Published var currentMonth = [Date]()

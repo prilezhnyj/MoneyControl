@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TopBarView: View {
-    @ObservedObject var controlViewModel = ControlViewModel()
+    @ObservedObject var controlViewModel = ExpenseViewModel()
     
     var body: some View {
         HStack {

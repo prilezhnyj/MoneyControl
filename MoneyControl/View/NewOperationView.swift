@@ -9,62 +9,81 @@ import SwiftUI
 
 struct NewOperationView: View {
     
-    @State var sel = 0
-    @State var amountTextField = ""
-    @State var controlModel: ControlModel!
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var category: ExpenseCategory = .products
+    @State private var account: Account = .main
+    @State private var amount = ""
+    @State private var description = ""
+    @State private var controlModel: ExpenseModel!
+    @State private var pickerSection = 0
+    
+    @ObservedObject var controlViewModel = ExpenseViewModel()
+    
+    private let withScreen = UIScreen.main.bounds.width - 32
     
     var body: some View {
-        VStack(spacing: 0) {
-            Text("Новая покупка")
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-                .frame(maxWidth: .infinity, alignment: .center)
+        VStack(alignment: .center, spacing: 20) {
+            Text("Новый расход")
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .frame(maxWidth: .infinity)
+            
+            HStack(alignment: .center, spacing: 8) {
+                Button {
+                    //
+                } label: {
+                    Text("Расход")
+                        .font(.system(size: 16, weight: .semibold, design: .default))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 8)
+                        .background(Color.white)
+                        .clipShape(Capsule(style: .continuous))
+                        .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
+                }
+                Button {
+                    //
+                } label: {
+                    Text("Расход")
+                        .font(.system(size: 16, weight: .semibold, design: .default))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 8)
+                        .background(Color.white)
+                        .clipShape(Capsule(style: .continuous))
+                        .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            
+            TextField("Сумма", text: $amount)
+                .keyboardType(.numberPad)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
                 .padding(.horizontal, 16)
-            
-            List {
-                Section {
-                    Picker("Категория", selection: $sel) {
-                        ForEach(ExpenseCategory.self.allCases, id: \.self) { index in
-                            Text(index.description)
-                        }
-                    }
-                } footer: {
-                    Text("Выберите категорию своей траты. В будущем у вас будет возможность изменить её.")
-                }
-                
-                Section {
-                    Picker("Кошелёк", selection: $sel) {
-                        ForEach(Account.self.allCases, id: \.self) { index in
-                            Text(index.description)
-                        }
-                    }
-                } footer: {
-                    Text("Выберите тип вашего счёта. В будущем у вас будет возможность изменить её.")
-                }
-                
-                Section {
-                    TextField("Начните ввод", text: $amountTextField)
-                        .keyboardType(.numberPad)
-                } footer: {
-                    Text("Вветите сумму, которую потратили. В будущем у вас не будет возможность изменить её.")
-                }
-            }
-            .cornerRadius(20)
-            .padding(16)
-            
-            Spacer()
-            
-            Button("Сохранить") {
-                //
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 50)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .padding(16)
+                .textFieldStyle(.plain)
+                .frame(maxWidth: .infinity)
+                .frame(height: 48)
+                .background(Color.gray.opacity(0.2))
+                .clipShape(Capsule(style: .continuous))
+                .padding(.horizontal, 16)
             
             Spacer()
         }
+    }
+    
+    func saveNewExpense(category: ExpenseCategory, account: Account, amount: String, description: String) {
+        if Double(amount) != nil {
+            controlViewModel.mockData.append(ExpenseModel(expenseCategory: category, expenseDescription: description, accoutn: account, amount: Double(amount)!, date: Date()))
+            print(controlViewModel.mockData)
+        } else {
+            print("ERROR")
+        }
+    }
+    
+    func amountIsEmpty(amountTextField: String) -> Bool {
+        guard amountTextField != "" else { return true }
+        return false
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  ControlModel.swift
+//  ExpenseModel.swift
 //  MoneyControl
 //
 //  Created by Максим Боталов on 19.11.2022.
@@ -8,19 +8,15 @@
 import Foundation
 
 // MARK: - Model
-struct ControlModel: Identifiable {
+struct ExpenseModel: Identifiable {
     var id = UUID().uuidString
-    var expenseCategory: ExpenseCategory?
+    var expenseCategory: ExpenseCategory
     var expenseDescription: String?
     var expenseCheckPhoto: String?
-    var incomeCategory: IncomeCategory?
-    var incomeDescription: String?
-    var accoutn: Account?
-    var type: TypeOperation
+    var accoutn: Account
     var amount: Double
     var date: Date
 }
-
 
 // MARK: - Expense Category
 enum ExpenseCategory: CaseIterable {
@@ -147,13 +143,6 @@ extension Account {
             return "Личный"
         }
     }
-}
-
-
-// MARK: - Type Operation
-enum TypeOperation {
-    case expense
-    case income
 }
     
     
