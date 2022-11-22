@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0A39A3292D020900888590 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A39A2292D020900888590 /* CategoryViewCell.swift */; };
 		6A4306682928530B00D00E97 /* MoneyControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306672928530B00D00E97 /* MoneyControlApp.swift */; };
 		6A43066A2928530B00D00E97 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4306692928530B00D00E97 /* MainView.swift */; };
 		6A43066C2928530C00D00E97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A43066B2928530C00D00E97 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A0A39A2292D020900888590 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		6A4306642928530B00D00E97 /* MoneyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A4306672928530B00D00E97 /* MoneyControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyControlApp.swift; sourceTree = "<group>"; };
 		6A4306692928530B00D00E97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				6A43067E29285B1300D00E97 /* Elements UI */,
 				6A4306692928530B00D00E97 /* MainView.swift */,
 				6A430682292874FB00D00E97 /* NewOperationView.swift */,
+				6A0A39A2292D020900888590 /* CategoryViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				6A430683292874FB00D00E97 /* NewOperationView.swift in Sources */,
 				6A43067D2928589B00D00E97 /* TopBarView.swift in Sources */,
+				6A0A39A3292D020900888590 /* CategoryViewCell.swift in Sources */,
 				6A430677292853AA00D00E97 /* ExpenseModel.swift in Sources */,
 				6A43066A2928530B00D00E97 /* MainView.swift in Sources */,
 				6A43068129285C5C00D00E97 /* InfoWidget.swift in Sources */,
