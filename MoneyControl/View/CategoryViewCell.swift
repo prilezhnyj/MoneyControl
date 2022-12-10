@@ -20,6 +20,7 @@ struct CategoryViewCell: View {
             
             Text(controlModel.description)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundColor(.black)
         }
     }
 }

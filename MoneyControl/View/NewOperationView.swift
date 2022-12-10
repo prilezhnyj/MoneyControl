@@ -18,7 +18,9 @@ struct NewOperationView: View {
     @State private var controlModel: ExpenseModel!
     @State private var pickerSection = 0
     @State private var showCategory = false
-    @State private var textForTextEditor = "Описание заметки (опицонально)."
+    @State private var textForTextEditor = ""
+    
+    
     
     @ObservedObject var controlViewModel = ExpenseViewModel()
     
@@ -29,7 +31,7 @@ struct NewOperationView: View {
             Text("Новый расход")
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .frame(maxWidth: .infinity)
-                .padding(.top, 16)
+                .padding(.vertical, 16)
             
             HStack(alignment: .center, spacing: 8) {
                 Button {
@@ -40,6 +42,7 @@ struct NewOperationView: View {
                         .foregroundColor(.black)
                         .padding(.horizontal, 30)
                         .padding(.vertical, 8)
+                        .frame(maxWidth: .infinity)
                         .background(Color.white)
                         .clipShape(Capsule(style: .continuous))
                         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
@@ -52,13 +55,14 @@ struct NewOperationView: View {
                         .foregroundColor(.black)
                         .padding(.horizontal, 30)
                         .padding(.vertical, 8)
+                        .frame(maxWidth: .infinity)
                         .background(Color.white)
                         .clipShape(Capsule(style: .continuous))
                         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
                 }
-                Spacer()
             }
             .padding(.horizontal, 16)
+            .padding(.bottom, 8)
             
             TextField("Сумма", text: $amount)
                 .keyboardType(.numberPad)
@@ -70,6 +74,7 @@ struct NewOperationView: View {
                 .background(Color.gray.opacity(0.2))
                 .clipShape(Capsule(style: .continuous))
                 .padding(.horizontal, 16)
+                .padding(.bottom, 8)
             
             VStack(spacing: 0) {
                 HStack {
@@ -89,12 +94,15 @@ struct NewOperationView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))], alignment: .center, spacing: 30) {
                         ForEach(ExpenseCategory.allCases, id: \.self) { item in
-                            CategoryViewCell(controlModel: item)
+                            Button {
+                                category = item
+                            } label: {
+                                CategoryViewCell(controlModel: item)
+                            }
                         }
                     }
                 }
                 .padding(.horizontal, 16)
-                
                 
                 Spacer()
             }
@@ -103,42 +111,94 @@ struct NewOperationView: View {
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.horizontal, 16)
+            .padding(.bottom, 8)
             .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
             .animation(.spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0.5), value: showCategory)
             
-            HStack(alignment: .center, spacing: 8) {
-                ForEach(Account.allCases, id: \.self) { item in
-                    Button {
-                        //
-                    } label: {
-                        Text(item.description)
-                            .font(.system(size: 16, weight: .semibold, design: .default))
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 30)
-                            .padding(.vertical, 8)
-                            .background(Color.white)
-                            .clipShape(Capsule(style: .continuous))
-                            .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
-                    }
+            
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Тип счёта")
+                        .font(.system(size: 16, weight: .semibold, design: .default))
+                    
+                    Spacer()
+                    
+//                    Button(showCategory ? "Скрыть" : "Показать") {
+//                        showCategory.toggle()
+//                    }
                 }
+                .padding(.vertical, 16)
+                .padding(.horizontal, 16)
+                
+                HStack(alignment: .center, spacing: 8) {
+                    ForEach(Account.allCases, id: \.self) { item in
+                        Button {
+                            account = item
+                        } label: {
+                            Text(item.description)
+                                .font(.system(size: 16, weight: .semibold, design: .default))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 30)
+                                .padding(.vertical, 8)
+                                .background(Color.white)
+                                .clipShape(Capsule(style: .continuous))
+                                .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 5)
+                        }
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, 16)
+                .animation(.spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0.5), value: showCategory)
+                
                 Spacer()
             }
+            .frame(height: 120)
+            .frame(maxWidth: .infinity)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.horizontal, 16)
+            .padding(.bottom, 8)
+            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
             .animation(.spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0.5), value: showCategory)
             
-            HStack {
-                TextEditor(text: $textForTextEditor)
-                    .foregroundColor(.gray)
+            ZStack {
+                
+                
+                TextEditor(text: $description)
+                    .font(.system(size: 16, weight: .semibold, design: .default))
+                    .foregroundColor(.black)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
                     .background(Color.white)
+                
+                Text("Описание заметки (опицонально)")
+                    .font(.system(size: 16, weight: .semibold, design: .default))
+                    .foregroundColor(description == "" ? .gray : .clear)
             }
             .frame(maxWidth: .infinity)
             .frame(height: 100)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.horizontal, 16)
+            .padding(.bottom, 8)
             .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
             .animation(.spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0.5), value: showCategory)
+            
+            Button {
+                saveNewExpense(category: category, account: account, amount: amount, description: description)
+            } label: {
+                Text("Сохранить")
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
+                    .padding(.horizontal, 16)
+            }
+            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0.5), value: showCategory)
+            .padding(.bottom, 16)
+
             
             Spacer()
         }
